@@ -17,7 +17,7 @@
     ansible.builtin.service:
       name: mongod
       state: started
-      enableds: yes
+      enabled: yes
 
   - name: Enable remote server access
     ansible.builtin.replace:
