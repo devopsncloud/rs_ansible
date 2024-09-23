@@ -1,7 +1,7 @@
 ---
 - name: Setting up mongodb env
   hosts: mongodb
-  become:yes
+  become: yes
   tasks:
   - name: copy mongo repo into /etc/yum.repos.d/mongo.repo
     copy:
