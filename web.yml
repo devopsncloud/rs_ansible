@@ -34,7 +34,8 @@
   - name: Copy the roboshop config file
     ansible.builtin.copy:
       src: /home/centos/rs_ansible/roboshop.conf
-      dest: /etc/nginx/default.d/*
+      dest: /etc/nginx/default.d/roboshop.conf
+
   
   - name: Ensure nginx is enabled
     ansible.builtin.service:
