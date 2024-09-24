@@ -35,6 +35,17 @@
     ansible.builtin.copy:
       src: /home/centos/rs_ansible/roboshop.conf
       dest: /etc/nginx/default.d/
+  
+  - name: Ensure nginx is enabled
+    ansible.builtin.service:
+     name: nginx
+      enabled: yes
+
+  - name: Restart nginx service
+    ansible.builtin.service:
+      name: nginx
+     state: restarted
+
 
   # - name: Start and Enabling the nginx service
   #   ansible.builtin.service:
@@ -47,12 +58,4 @@
   #     name: nginx
   #     state: restarted
   #     enabled: yes
-  - name: Ensure nginx is enabled
-  ansible.builtin.service:
-    name: nginx
-    enabled: yes
-
-  - name: Restart nginx service
-  ansible.builtin.service:
-    name: nginx
-    state: restarted
+  
