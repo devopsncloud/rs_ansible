@@ -56,7 +56,6 @@
       daemon_reload: true
 
 
-  #Start after the data load 
 
   - name: copy mongo repo into /etc/yum.repos.d/mongo.repo
     copy:
@@ -73,9 +72,9 @@
     ansible.builtin.command: mongo --host mongodb.roboriya.shop --quiet --eval 'db = db.getSiblingDB("catalogue"), db.products.count()'
     register: product_count
 
-  # - name: printing the count
-  #   ansible.builtin.debug:
-  #     msg: "product_count: {{product_count}}"
+  - name: printing the count
+    ansible.builtin.debug:
+      msg: "product_count: {{product_count}}"
 
   - name: load the catalogue data
     ansible.builtin.command: mongo --host mongodb.roboriya.shop < /app/schema/catalogue.js
