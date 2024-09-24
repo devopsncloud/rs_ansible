@@ -42,8 +42,17 @@
   #     state: restarted
   #     enabled: yes
   
-  - name: start and enable nginx
-    ansible.builtin.service:
-      name: nginx
-      state: restarted
-      enabled: yes
+  # - name: start and enable nginx
+  #   ansible.builtin.service:
+  #     name: nginx
+  #     state: restarted
+  #     enabled: yes
+  - name: Ensure nginx is enabled
+  ansible.builtin.service:
+    name: nginx
+    enabled: yes
+
+  - name: Restart nginx service
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
