@@ -3,10 +3,10 @@
   hosts: payment
   become: yes
   tasks:
-  - name: Install packages
+  - name: Install python packages
     ansible.builtin.dnf:
-    name: {{item}}
-    state: present
+      name: "{{item}}"
+      state: present
     loop:
     - python36
     - gcc
