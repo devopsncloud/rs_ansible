@@ -69,7 +69,7 @@
       
 
   - name: Checking the products count
-    ansible.builtin.command: mongo --host mongodb.roboriya.shop --quiet --eval 'db = db.getSiblingDB("user"), db.products.count()'
+    ansible.builtin.command: mongo --host mongodb.roboriya.shop --quiet --eval 'db = db.getSiblingDB("user"), db.user.count()'
     register: user_count
 
   - name: printing the count
