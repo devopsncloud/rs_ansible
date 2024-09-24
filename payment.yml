@@ -29,7 +29,7 @@
 
   - name: downloading the appliction code
     ansible.builtin.get_url:
-      name: https://roboshop-builds.s3.amazonaws.com/payment.zip
+      url: https://roboshop-builds.s3.amazonaws.com/payment.zip
       path: /tmp
 
   - name: Uzipping the code into /app
