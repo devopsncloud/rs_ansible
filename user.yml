@@ -68,13 +68,13 @@
       state: present
       
 
-  - name: Checking the products count
+  - name: Checking the users count
     ansible.builtin.command: mongo --host mongodb.roboriya.shop --quiet --eval 'db = db.getSiblingDB("user"), db.user.count()'
     register: user_count
 
   - name: printing the count
     ansible.builtin.debug:
-      msg: "user_count: {{product_count}}"
+      msg: "user_count: {{user_count}}"
 
   - name: load the user data
     ansible.builtin.command: mongo --host mongodb.roboriya.shop < /app/schema/user.js
