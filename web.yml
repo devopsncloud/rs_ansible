@@ -14,7 +14,7 @@
       path: /usr/share/nginx/html/
       state: absent
   
-  - name: Creating the html file
+  - name: Creating the html directory
     ansible.builtin.file:
       path: /usr/share/nginx/html/
       state: directory
@@ -36,7 +36,13 @@
       src: /home/centos/rs_ansible/roboshop.conf
       dest: /etc/nginx/default.d/
 
-  - name: Start and Enabling the nginx service
+  # - name: Start and Enabling the nginx service
+  #   ansible.builtin.service:
+  #     name: nginx
+  #     state: restarted
+  #     enabled: yes
+  
+  - name: start and enable nginx
     ansible.builtin.service:
       name: nginx
       state: restarted
