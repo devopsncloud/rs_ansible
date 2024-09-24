@@ -62,3 +62,11 @@
       name: mongodb-org-shell
       state: present
       
+
+  - name: Checking the products count
+    ansible.builtin.command: mongo --host mongodb.roboriya.shop --quiet --eval 'db = db.getSiblingDB("catalogue"), db.products.count()'
+    register: product_count
+
+  - name: printing the count
+    ansible.builtin.debug:
+      msg: "product_count: {{product_count}}"
