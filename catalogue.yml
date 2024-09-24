@@ -73,4 +73,4 @@
 
   - name: load the catalogue data
     ansible.builtin.command: mongo --host mongodb.roboriya.shop < /app/schema/catalogue.js
-    #when: product_count.stdout == 0
+    when: product_count.stdout == '0'
