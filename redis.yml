@@ -5,7 +5,7 @@
   tasks:
   - name: Installing redis remi
     ansible.builtin.dnf: 
-      name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm 
+      name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
       state: present
 
   - name: enable redis
