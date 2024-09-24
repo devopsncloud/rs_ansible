@@ -11,12 +11,12 @@
 
   - name: Removing the html file
     ansible.builtin.file:
-      path: /usr/share/nginx/html/
+      path: /usr/share/nginx/html
       state: absent
   
   - name: Creating the html directory
     ansible.builtin.file:
-      path: /usr/share/nginx/html/
+      path: /usr/share/nginx/html
       state: directory
 
   - name: Download the web app content
@@ -28,13 +28,13 @@
   - name: Unzip the application contents into /html
     ansible.builtin.unarchive:
       src: /tmp/web.zip
-      dest: /usr/share/nginx/html/
+      dest: /usr/share/nginx/html
       remote_src: yes
 
   - name: Copy the roboshop config file
     ansible.builtin.copy:
       src: /home/centos/rs_ansible/roboshop.conf
-      dest: /etc/nginx/default.d/
+      dest: /etc/nginx/default.d/*
   
   - name: Ensure nginx is enabled
     ansible.builtin.service:
